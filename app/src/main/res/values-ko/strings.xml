@@ -324,7 +324,7 @@
     <string name="custom_value">사용자 지정 값</string>
     <string name="new_library_design">썸네일 모서리 반경 사용자 지정</string>
     <string name="new_library_design_description">새 라이브러리 디자인</string>
-    <string name="OpenTune_canvas">OpenTune Canvas</string>
+    <string name="OpenTune_canvas">Lyra Music Canvas</string>
     <string name="OpenTune_canvas_desc">재생 중 앨범 아트워크 애니메이션 (BetterLyrics 제공)</string>
     <string name="show_button1_description">새 라이브러리 디자인 활성화(불안정할 수 있음)</string>
     <string name="show_button2_description">Discord Rich의 버튼 1 가시성 전환 현재 상태</string>
@@ -430,7 +430,7 @@
     <string name="restore_failed">백업을 생성할 수 없음</string>
     <string name="discord_integration">백업 복원 실패</string>
     <string name="discord_information">Discord 통합</string>
-    <string name="dismiss">OpenTune은 KizzyRPC 라이브러리를 사용하여 Discord 계정 상태를 설정합니다. 여기에는 Discord 게이트웨이 연결 사용이 포함되며 이는 Discord의 TOS 위반으로 간주될 수 있습니다. 그러나 이러한 이유로 사용자 계정이 정지된 사례는 알려진 바가 없습니다. 사용에 따른 책임은 사용자에게 있습니다.OpenTune은 토큰만 추출하며 그 밖의 모든 항목은 로컬에 저장됩니다.</string>
+    <string name="dismiss">Lyra Music은 KizzyRPC 라이브러리를 사용하여 Discord 계정 상태를 설정합니다. 여기에는 Discord 게이트웨이 연결 사용이 포함되며 이는 Discord의 TOS 위반으로 간주될 수 있습니다. 그러나 이러한 이유로 사용자 계정이 정지된 사례는 알려진 바가 없습니다. 사용에 따른 책임은 사용자에게 있습니다.Lyra Music은 토큰만 추출하며 그 밖의 모든 항목은 로컬에 저장됩니다.</string>
     <string name="options">해제</string>
     <string name="preview">옵션</string>
     <string name="enable_discord_rpc">미리보기</string>
@@ -482,7 +482,7 @@
     <string name="select_dialog">닫기</string>
     <string name="support_github">선택</string>
     <!-- Update dialog -->
-    <string name="new_update_available">OpenTune 별표 표시!</string>
+    <string name="new_update_available">Lyra Music 별표 표시!</string>
     <string name="release_notes_unavailable">새 업데이트 사용 가능</string>
     <string name="update_text">출시 노트는 다음과 같습니다. 사용할 수 없음</string>
     <!-- Translate UI strings -->
@@ -558,7 +558,7 @@
     <string name="update_notification_channel_name">앱 업데이트</string>
     <string name="update_notification_channel_desc">새로운 앱 업데이트 알림</string>
     <string name="update_notification_title">업데이트 가능</string>
-    <string name="update_notification_text">OpenTune %s이(가) 출시되었습니다</string>
+    <string name="update_notification_text">Lyra Music %s이(가) 출시되었습니다</string>
     <string name="download">다운로드</string>
     <string name="tempo">템포</string>
     <string name="pitch">피치</string>
@@ -626,7 +626,7 @@
     <string name="playback_state_ended">종료됨</string>
     <string name="playback_state_unknown">알 수 없음</string>
     <string name="share_logs">로그 공유</string>
-    <string name="permissions_title">OpenTune이 최상으로 작동하도록 허용</string>
+    <string name="permissions_title">Lyra Music이 최상으로 작동하도록 허용</string>
     <string name="permissions_subtitle">음악을 안정적으로 재생하고 관리하기 위해 몇 가지 권한을 사용합니다. 시스템 설정에서 언제든지 변경할 수 있습니다.</string>
     <string name="permission_storage_title">저장소 액세스</string>
     <string name="permission_storage_desc">재생을 위해 다운로드한 파일 및 로컬 오디오 파일을 읽는 데 필요합니다.</string>

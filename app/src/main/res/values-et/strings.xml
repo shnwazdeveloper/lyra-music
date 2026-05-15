@@ -294,7 +294,7 @@
     <string name="dismiss">Loobu</string>
     <string name="options">Valikud</string>
     <string name="preview">Eelvaade</string>
-    <string name="enable_discord_rpc">Näita oma tegevust OpenTune\'i rakenduses Discordi olekuteatena</string>
+    <string name="enable_discord_rpc">Näita oma tegevust Lyra Music\'i rakenduses Discordi olekuteatena</string>
     <string name="scrobbling">Kraasimine</string>
     <string name="lastfm_integration">Last.fm-i lõiming</string>
     <string name="enable_scrobbling">Lülita kraasimine sisse</string>

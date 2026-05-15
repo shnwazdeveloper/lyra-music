@@ -178,7 +178,7 @@
     <string name="playlist_imported">Плейліст імпортовано</string>
     <string name="removed_song_from_playlist">Видалено \"%s\" з плейліста</string>
     <string name="playlist_synced">Плейліст синхронізовано</string>
-    <string name="OpenTune_canvas">OpenTune Canvas</string>
+    <string name="OpenTune_canvas">Lyra Music Canvas</string>
     <string name="OpenTune_canvas_desc">Анімувати обкладинку альбому під час відтворення (за технологією BetterLyrics)</string>
     <string name="action_sync">Синхронізувати</string>
     <string name="advanced">Розширені налаштування</string>

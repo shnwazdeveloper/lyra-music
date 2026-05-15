@@ -20,11 +20,11 @@ dependencyResolutionManagement {
 }
 
 // F-Droid doesn't support foojay-resolver plugin
-// plugins {
-//     id("org.gradle.toolchains.foojay-resolver-convention") version("1.0.0")
-// }
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version("1.0.0")
+}
 
-rootProject.name = "OpenTune"
+rootProject.name = "Lyra Music"
 include(":app")
 include(":innertube")
 include(":kugou")

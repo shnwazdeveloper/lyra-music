@@ -435,7 +435,7 @@
     <string name="backup_create_failed">Es konnte kein Backup erstellt werden</string>
     <string name="restore_failed">Sicherung konnte nicht wiederhergestellt werden</string>
     <string name="discord_integration">Discord-Integration</string>
-    <string name="discord_information">OpenTune verwendet die KizzyRPC-Bibliothek, um den Status Ihres Discord-Kontos festzulegen. Dies beinhaltet die Verwendung der Discord-Gateway-Verbindung, was als Verstoß gegen die AGB von Discord angesehen werden kann. Es sind jedoch keine Fälle bekannt, in denen Benutzerkonten aus diesem Grund gesperrt wurden. Die Nutzung erfolgt auf eigene Gefahr. OpenTune extrahiert nur Ihr Token und alles andere wird lokal gespeichert.</string>
+    <string name="discord_information">Lyra Music verwendet die KizzyRPC-Bibliothek, um den Status Ihres Discord-Kontos festzulegen. Dies beinhaltet die Verwendung der Discord-Gateway-Verbindung, was als Verstoß gegen die AGB von Discord angesehen werden kann. Es sind jedoch keine Fälle bekannt, in denen Benutzerkonten aus diesem Grund gesperrt wurden. Die Nutzung erfolgt auf eigene Gefahr. Lyra Music extrahiert nur Ihr Token und alles andere wird lokal gespeichert.</string>
     <string name="dismiss">Zurückweisen</string>
     <string name="options">Optionen</string>
     <string name="preview">Vorschau</string>
@@ -486,7 +486,7 @@
     <string name="select_language">Wählen Sie Sprache aus</string>
     <string name="close_dialog">Schließen</string>
     <string name="select_dialog">Wählen</string>
-    <string name="support_github">Star OpenTune!</string>
+    <string name="support_github">Star Lyra Music!</string>
     <!-- Update dialog -->
     <string name="new_update_available">Neues Update verfügbar</string>
     <string name="release_notes_unavailable">Versionshinweise sind nicht verfügbar</string>

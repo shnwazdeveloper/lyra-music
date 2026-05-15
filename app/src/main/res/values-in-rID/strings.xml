@@ -426,7 +426,7 @@
     <string name="backup_create_failed">Tidak dapat membuat cadangan</string>
     <string name="restore_failed">Gagal memulihkan cadangan</string>
     <string name="discord_integration">Integrasi Discord</string>
-    <string name="discord_information">OpenTune menggunakan perpustakaan KizzyRPC untuk mengatur status akun Discord Anda. Hal ini melibatkan penggunaan koneksi Discord Gateway, yang mungkin dianggap sebagai pelanggaran terhadap TOS Discord. Namun, tidak ada kasus yang diketahui mengenai akun pengguna yang ditangguhkan karena alasan ini. Risiko penggunaan ditanggung sendiri. OpenTune hanya akan mengekstrak token Anda, dan yang lainnya disimpan secara lokal.</string>
+    <string name="discord_information">Lyra Music menggunakan perpustakaan KizzyRPC untuk mengatur status akun Discord Anda. Hal ini melibatkan penggunaan koneksi Discord Gateway, yang mungkin dianggap sebagai pelanggaran terhadap TOS Discord. Namun, tidak ada kasus yang diketahui mengenai akun pengguna yang ditangguhkan karena alasan ini. Risiko penggunaan ditanggung sendiri. Lyra Music hanya akan mengekstrak token Anda, dan yang lainnya disimpan secara lokal.</string>
     <string name="dismiss">Tolak</string>
     <string name="options">Opsi</string>
     <string name="preview">Pratinjau</string>
@@ -555,7 +555,7 @@
     <string name="update_notification_channel_name">Pembaruan Aplikasi</string>
     <string name="update_notification_channel_desc">Notifikasi untuk pembaruan aplikasi baru</string>
     <string name="update_notification_title">Pembaruan Tersedia</string>
-    <string name="update_notification_text">OpenTune %s sekarang tersedia</string>
+    <string name="update_notification_text">Lyra Music %s sekarang tersedia</string>
     <string name="download">Unduh</string>
     <string name="lyrics_line_spacing">Jarak antar baris teks lirik</string>
     <string name="added_to_playlist">Ditambahkan ke %s</string>
@@ -596,7 +596,7 @@
     <string name="smart_trimmer">Pemotong Cerdas</string>
     <string name="smart_trimmer_description">Pemotong cerdas secara dinamis mengelola cache gambar dan cache lagu, menghapus entri lama untuk menghemat ruang disk.</string>
     <string name="hide_video">Sembunyikan video musik</string>
-    <string name="permissions_title">Izinkan OpenTune berfungsi dengan optimal</string>
+    <string name="permissions_title">Izinkan Lyra Music berfungsi dengan optimal</string>
     <string name="permissions_subtitle">Kami menggunakan beberapa izin untuk memutar dan mengelola musik Anda dengan andal. Anda dapat mengubah izin-izin ini kapan saja di pengaturan sistem.</string>
     <string name="permission_storage_title">Akses penyimpanan</string>
     <string name="permission_storage_desc">Diperlukan untuk membaca file audio yang diunduh dan file audio lokal untuk pemutaran.</string>

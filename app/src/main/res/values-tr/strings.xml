@@ -475,7 +475,7 @@
     <string name="backup_create_failed">Yedekleme oluşturulamadı</string>
     <string name="restore_failed">Yedekleme geri yüklenemedi</string>
     <string name="discord_integration">Anlaşmazlık Entegrasyonu</string>
-    <string name="discord_information">OpenTune uses the KizzyRPC library to set your Discord account\'s status. This involves using the Discord Gateway connection, which may be considered a violation of Discord\'s TOS. However, there are no known cases of user accounts being suspended for this reason. Use at your own risk. OpenTune will only extract your token, and everything else is stored locally.</string>
+    <string name="discord_information">Lyra Music uses the KizzyRPC library to set your Discord account\'s status. This involves using the Discord Gateway connection, which may be considered a violation of Discord\'s TOS. However, there are no known cases of user accounts being suspended for this reason. Use at your own risk. Lyra Music will only extract your token, and everything else is stored locally.</string>
     <string name="dismiss">Reddet</string>
     <string name="options">Seçenekler</string>
     <string name="preview">Önizleme</string>
@@ -604,9 +604,9 @@
     <string name="update_notification_channel_name">Uygulama Güncellemeleri</string>
     <string name="update_notification_channel_desc">Yeni uygulama güncellemeleri için bildirimler</string>
     <string name="update_notification_title">Güncelleme Mevcut</string>
-    <string name="update_notification_text">OpenTune %s artık mevcut</string>
+    <string name="update_notification_text">Lyra Music %s artık mevcut</string>
     <string name="download">İndir</string>
-    <string name="permissions_title">OpenTune\'un en iyi şekilde çalışmasına izin verin</string>
+    <string name="permissions_title">Lyra Music\'un en iyi şekilde çalışmasına izin verin</string>
     <string name="permissions_subtitle">Müziğinizi güvenilir bir şekilde oynatmak ve yönetmek için birkaç izin kullanıyoruz. Bunları istediğiniz zaman sistem ayarlarından değiştirebilirsiniz.</string>
     <string name="permission_storage_title">Depolama erişimi</string>
     <string name="permission_storage_desc">İndirdiğiniz ve yerel ses dosyalarınızı oynatmak üzere okumak için gereklidir.</string>

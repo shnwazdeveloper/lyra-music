@@ -484,7 +484,7 @@
     <string name="backup_create_failed">Impossibile creare il backup</string>
     <string name="restore_failed">Impossibile ripristinare il backup</string>
     <string name="discord_integration">Integrazione della discordia</string>
-    <string name="discord_information">OpenTune uses the KizzyRPC library to set your Discord account\'s status. This involves using the Discord Gateway connection, which may be considered a violation of Discord\'s TOS. However, there are no known cases of user accounts being suspended for this reason. Use at your own risk. OpenTune will only extract your token, and everything else is stored locally.</string>
+    <string name="discord_information">Lyra Music uses the KizzyRPC library to set your Discord account\'s status. This involves using the Discord Gateway connection, which may be considered a violation of Discord\'s TOS. However, there are no known cases of user accounts being suspended for this reason. Use at your own risk. Lyra Music will only extract your token, and everything else is stored locally.</string>
     <string name="dismiss">Ignora</string>
     <string name="options">Opzioni</string>
     <string name="preview">Anteprima</string>
@@ -535,7 +535,7 @@
     <string name="select_language">Seleziona lingua</string>
     <string name="close_dialog">Chiudi</string>
     <string name="select_dialog">Seleziona</string>
-    <string name="support_github">Star OpenTune!</string>
+    <string name="support_github">Star Lyra Music!</string>
     <!-- Update dialog -->
     <string name="new_update_available">Nuovo aggiornamento disponibile</string>
     <string name="release_notes_unavailable">Le note sulla versione non sono disponibili</string>
@@ -613,9 +613,9 @@
     <string name="update_notification_channel_name">Aggiornamenti dell\'app</string>
     <string name="update_notification_channel_desc">Notifiche per nuovi aggiornamenti dell\'app</string>
     <string name="update_notification_title">Aggiornamento disponibile</string>
-    <string name="update_notification_text">OpenTune %s è ora disponibile</string>
+    <string name="update_notification_text">Lyra Music %s è ora disponibile</string>
     <string name="download">Scarica</string>
-    <string name="permissions_title">Consenti ad OpenTune di funzionare al meglio</string>
+    <string name="permissions_title">Consenti ad Lyra Music di funzionare al meglio</string>
     <string name="permissions_subtitle">Utilizziamo alcune autorizzazioni per riprodurre e gestire la tua musica in modo affidabile. Puoi modificarli in qualsiasi momento nelle impostazioni di sistema.</string>
     <string name="permission_storage_title">Accesso allo spazio di archiviazione</string>
     <string name="permission_storage_desc">Necessario per leggere i file audio scaricati e locali per la riproduzione.</string>

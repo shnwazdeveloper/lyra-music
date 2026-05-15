@@ -333,7 +333,7 @@
     <string name="custom_value">Valor personalizado</string>
     <string name="new_library_design">Nuevo diseño de biblioteca</string>
     <string name="new_library_design_description">Habilita el nuevo diseño de la biblioteca (puede ser inestable)</string>
-    <string name="OpenTune_canvas">OpenTune Canvas</string>
+    <string name="OpenTune_canvas">Lyra Music Canvas</string>
     <string name="OpenTune_canvas_desc">Animar la portada del álbum mientras se reproduce (Impulsado por BetterLyrics)</string>
     <string name="show_button1_description">Alternar la visibilidad del botón 1 en Discord Rich Presence</string>
     <string name="show_button2_description">Alternar la visibilidad del botón 2 en Discord Rich Presence</string>
@@ -474,7 +474,7 @@
     <string name="restore_success">Copia de seguridad restaurada con éxito</string>
     <string name="restore_failed">No se pudo restaurar la copia de seguridad</string>
     <string name="discord_integration">Integración con Discord</string>
-    <string name="discord_information">OpenTune utiliza la librería de KizzyRPC para establecer el estado en tu cuenta de Discord. Esto involucra que Discord utilice una conexión de puerta de enlace, lo que se consideraría una violación a los Términos y Condiciones de Discord. Sin embargo, no existen casos de usuarios siendo suspendidos por esta razón. Úsalo bajo tu propio riesgo. OpenTune no extrae tu token y, todo se almacena de forma local.</string>
+    <string name="discord_information">Lyra Music utiliza la librería de KizzyRPC para establecer el estado en tu cuenta de Discord. Esto involucra que Discord utilice una conexión de puerta de enlace, lo que se consideraría una violación a los Términos y Condiciones de Discord. Sin embargo, no existen casos de usuarios siendo suspendidos por esta razón. Úsalo bajo tu propio riesgo. Lyra Music no extrae tu token y, todo se almacena de forma local.</string>
     <string name="options">Opciones</string>
     <string name="preview">Vista previa</string>
     <string name="enable_discord_rpc">Activa Rich Presence</string>
@@ -520,7 +520,7 @@
     <string name="select_language">Selecciona el idioma</string>
     <string name="close_dialog">Cerrar</string>
     <string name="select_dialog">Seleccionar</string>
-    <string name="support_github">Inicia OpenTune!</string>
+    <string name="support_github">Inicia Lyra Music!</string>
     <string name="new_update_available">Nueva actualización disponible</string>
     <string name="release_notes_unavailable">Las notas de la versión no están disponibles</string>
     <string name="update_text">Actualizar</string>
@@ -620,9 +620,9 @@
     <string name="update_notification_channel_name">Actualizaciones de la aplicación</string>
     <string name="update_notification_channel_desc">Notificaciones para nuevas actualizaciones de la aplicación</string>
     <string name="update_notification_title">Actualización Disponible</string>
-    <string name="update_notification_text">OpenTune %s esta ahora disponible</string>
+    <string name="update_notification_text">Lyra Music %s esta ahora disponible</string>
     <string name="download">Descargar</string>
-    <string name="permissions_title">Permite a OpenTune a trabajar mejor</string>
+    <string name="permissions_title">Permite a Lyra Music a trabajar mejor</string>
     <string name="permissions_subtitle">Utilizamos un par de permisos para reproducir y administrar tu música de forma fiable. Puedes cambiar esto en los ajustes del sistema cuando quieras.</string>
     <string name="permission_storage_title">Acceso al almacenamiento</string>
     <string name="permission_storage_desc">Requerido para leer tus descargas y para reproducir tus audios locales.</string>
@@ -636,7 +636,7 @@
     <string name="allow">Permitir</string>
     <string name="you_might_like">Tal vez te guste</string>
     <string name="refresh_suggestions">Actualizar sugerencias</string>
-    <string name="music_together">Juntos con OpenTune Music</string>
+    <string name="music_together">Juntos con Lyra Music</string>
     <string name="together_display_name">Mostrar nombre</string>
     <string name="together_display_name_placeholder">Tú nombre</string>
     <string name="together_port">Puerto de sesión</string>
@@ -692,10 +692,10 @@
     <string name="together_error_state">Error</string>
     <string name="got_it">Entendido</string>
     <string name="together_dont_show_again">No mostrar esto nuevamente</string>
-    <string name="together_welcome_title">Bienvenido a OpenTune Music Together</string>
+    <string name="together_welcome_title">Bienvenido a Lyra Music Together</string>
     <string name="together_welcome_body">Music Together permite que múltiples dispositivos compartan una sesión en vivo con una cola y reproducción sincronizadas.</string>
     <string name="together_welcome_host_title">Organizar una sesión</string>
-    <string name="together_welcome_host_body">Pulsa \"comenzar sesión\", después comparte el enlace de sesión. Mantén OpenTune abierto en segundo plano mientras alojas.</string>
+    <string name="together_welcome_host_body">Pulsa \"comenzar sesión\", después comparte el enlace de sesión. Mantén Lyra Music abierto en segundo plano mientras alojas.</string>
     <string name="stream_bypass_proxy">Proxy de derivación para transmisiones</string>
     <string name="stream_bypass_proxy_desc">Utiliza tu dirección IP directa para la reproducción de transmisiones y evita las incompatibilidades de IP</string>
 </resources>
