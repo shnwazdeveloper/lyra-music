@@ -85,6 +85,7 @@ import com.arturo254.opentune.ui.component.LocalBottomSheetPageState
 import com.arturo254.opentune.ui.component.NewAction
 import com.arturo254.opentune.ui.component.NewActionGrid
 import com.arturo254.opentune.ui.utils.ShowMediaInfo
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrl
 import com.arturo254.opentune.utils.joinByBullet
 import com.arturo254.opentune.utils.makeTimeString
 import com.arturo254.opentune.utils.rememberPreference
@@ -239,7 +240,7 @@ fun YouTubeSongMenu(
                     .clip(RoundedCornerShape(ThumbnailCornerRadius))
             ) {
                 AsyncImage(
-                    model = song.thumbnail,
+                    model = song.thumbnail.highQualityThumbnailUrl(),
                     contentDescription = null,
                     modifier = Modifier
                         .fillMaxWidth()

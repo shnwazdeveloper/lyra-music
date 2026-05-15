@@ -240,6 +240,7 @@ import com.arturo254.opentune.ui.theme.ThemeSeedPaletteCodec
 import com.arturo254.opentune.ui.theme.extractThemeColor
 import com.arturo254.opentune.ui.utils.appBarScrollBehavior
 import com.arturo254.opentune.ui.utils.backToMain
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import com.arturo254.opentune.ui.utils.resetHeightOffset
 import com.arturo254.opentune.utils.SyncUtils
 import com.arturo254.opentune.utils.UpdateNotificationManager
@@ -612,7 +613,7 @@ class MainActivity : ComponentActivity() {
                                 val result = imageLoader.execute(
                                     ImageRequest
                                         .Builder(this@MainActivity)
-                                        .data(song.thumbnailUrl)
+                                        .data(song.thumbnailUrl.highQualityThumbnailUrlOrNull())
                                         .allowHardware(false)
                                         .build(),
                                 )

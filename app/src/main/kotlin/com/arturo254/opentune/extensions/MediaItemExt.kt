@@ -18,6 +18,8 @@ import com.arturo254.opentune.innertube.models.WatchEndpoint.WatchEndpointMusicS
 import com.arturo254.opentune.db.entities.Song
 import com.arturo254.opentune.models.MediaMetadata
 import com.arturo254.opentune.models.toMediaMetadata
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrl
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 
 const val ExtraIsMusicVideo = "com.arturo254.opentune.extra.IS_MUSIC_VIDEO"
 
@@ -37,7 +39,7 @@ fun Song.toMediaItem() =
                 .setTitle(song.title)
                 .setSubtitle(artists.joinToString { it.name })
                 .setArtist(artists.joinToString { it.name })
-                .setArtworkUri(song.thumbnailUrl?.toUri())
+                .setArtworkUri(song.thumbnailUrl.highQualityThumbnailUrlOrNull()?.toUri())
                 .setAlbumTitle(song.albumName)
                 .setMediaType(MEDIA_TYPE_MUSIC)
                 .setExtras(Bundle().apply { putBoolean(ExtraIsMusicVideo, false) })
@@ -57,7 +59,7 @@ fun SongItem.toMediaItem() =
                 .setTitle(title)
                 .setSubtitle(artists.joinToString { it.name })
                 .setArtist(artists.joinToString { it.name })
-                .setArtworkUri(thumbnail.toUri())
+                .setArtworkUri(thumbnail.highQualityThumbnailUrl().toUri())
                 .setAlbumTitle(album?.name)
                 .setMediaType(MEDIA_TYPE_MUSIC)
                 .setExtras(Bundle().apply { putBoolean(ExtraIsMusicVideo, isMusicVideo()) })
@@ -77,7 +79,7 @@ fun MediaMetadata.toMediaItem() =
                 .setTitle(title)
                 .setSubtitle(artists.joinToString { it.name })
                 .setArtist(artists.joinToString { it.name })
-                .setArtworkUri(thumbnailUrl?.toUri())
+                .setArtworkUri(thumbnailUrl.highQualityThumbnailUrlOrNull()?.toUri())
                 .setAlbumTitle(album?.title)
                 .setMediaType(MEDIA_TYPE_MUSIC)
                 .setExtras(Bundle().apply { putBoolean(ExtraIsMusicVideo, false) })

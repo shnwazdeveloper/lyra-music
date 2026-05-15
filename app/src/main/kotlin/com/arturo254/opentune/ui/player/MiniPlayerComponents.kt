@@ -70,6 +70,7 @@ import com.arturo254.opentune.extensions.togglePlayPause
 import com.arturo254.opentune.models.MediaMetadata
 import com.arturo254.opentune.playback.PlayerConnection
 import com.arturo254.opentune.together.TogetherSessionState
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
 import com.arturo254.opentune.LocalDatabase
@@ -306,7 +307,7 @@ private fun MiniPlayerArtwork(
             val thumbnailUrl = mediaMetadata?.thumbnailUrl
             if (thumbnailUrl != null) {
                 AsyncImage(
-                    model = thumbnailUrl,
+                    model = thumbnailUrl.highQualityThumbnailUrlOrNull(),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()

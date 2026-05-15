@@ -35,6 +35,7 @@ import com.arturo254.opentune.db.entities.PlaylistEntity
 import com.arturo254.opentune.db.entities.Song
 import com.arturo254.opentune.extensions.toMediaItem
 import com.arturo254.opentune.extensions.toggleRepeatMode
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -675,7 +676,7 @@ constructor(
                     .setTitle(song.title)
                     .setSubtitle(artists.joinToString { it.name })
                     .setArtist(artists.joinToString { it.name })
-                    .setArtworkUri(song.thumbnailUrl?.toUri())
+                    .setArtworkUri(song.thumbnailUrl.highQualityThumbnailUrlOrNull()?.toUri())
                     .setIsPlayable(true)
                     .setIsBrowsable(false)
                     .setMediaType(MediaMetadata.MEDIA_TYPE_MUSIC)

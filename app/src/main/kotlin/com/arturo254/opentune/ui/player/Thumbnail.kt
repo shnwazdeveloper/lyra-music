@@ -103,6 +103,7 @@ import com.arturo254.opentune.extensions.metadata
 import com.arturo254.opentune.extensions.toMediaItem
 import com.arturo254.opentune.innertube.YouTube
 import com.arturo254.opentune.innertube.models.YouTubeClient
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import com.arturo254.opentune.utils.rememberEnumPreference
 import com.arturo254.opentune.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
@@ -639,11 +640,16 @@ fun Thumbnail(
                                             )
                                         }
                                     } else {
+                                        val artworkUrl =
+                                            item.mediaMetadata
+                                                .artworkUri
+                                                ?.toString()
+                                                .highQualityThumbnailUrlOrNull()
                                         val primaryCanvasUrl = canvasArtwork?.animated
                                         val fallbackCanvasUrl = canvasArtwork?.videoUrl
                                         
                                         AsyncImage(
-                                            model = item.mediaMetadata.artworkUri?.toString(),
+                                            model = artworkUrl,
                                             contentDescription = null,
                                             contentScale = ContentScale.FillBounds,
                                             modifier = Modifier
@@ -656,7 +662,7 @@ fun Thumbnail(
                                         )
 
                                         AsyncImage(
-                                            model = item.mediaMetadata.artworkUri?.toString(),
+                                            model = artworkUrl,
                                             contentDescription = null,
                                             contentScale = if (cropThumbnailToSquare) ContentScale.Crop else ContentScale.Fit,
                                             modifier = Modifier

@@ -81,6 +81,7 @@ import com.arturo254.opentune.ui.component.MenuState
 import com.arturo254.opentune.ui.component.bottomSheetDraggable
 import com.arturo254.opentune.ui.menu.PlayerMenu
 import com.arturo254.opentune.ui.utils.ShowMediaInfo
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import com.arturo254.opentune.utils.makeTimeString
 import kotlin.math.roundToInt
 
@@ -140,7 +141,7 @@ fun CurrentSongHeader(
             horizontalArrangement = Arrangement.spacedBy(14.dp)
         ) {
             AsyncImage(
-                model = mediaMetadata?.thumbnailUrl,
+                model = mediaMetadata?.thumbnailUrl.highQualityThumbnailUrlOrNull(),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier

@@ -147,6 +147,7 @@ import com.arturo254.opentune.ui.component.rememberBottomSheetState
 import com.arturo254.opentune.ui.menu.PlayerMenu
 import com.arturo254.opentune.ui.screens.settings.DarkMode
 import com.arturo254.opentune.ui.utils.ShowMediaInfo
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import com.arturo254.opentune.utils.makeTimeString
 import com.arturo254.opentune.utils.rememberEnumPreference
 import com.arturo254.opentune.utils.rememberPreference
@@ -309,7 +310,7 @@ fun BottomSheetPlayer(
                     gradientColors = cachedColors
                 } else {
                     val request = ImageRequest.Builder(context)
-                        .data(currentMetadata.thumbnailUrl)
+                        .data(currentMetadata.thumbnailUrl.highQualityThumbnailUrlOrNull())
                         .size(PlayerColorExtractor.Config.IMAGE_SIZE, PlayerColorExtractor.Config.IMAGE_SIZE)
                         .allowHardware(false)
                         .build()

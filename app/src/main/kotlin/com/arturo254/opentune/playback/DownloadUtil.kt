@@ -32,6 +32,7 @@ import com.arturo254.opentune.db.entities.FormatEntity
 import com.arturo254.opentune.db.entities.SongEntity
 import com.arturo254.opentune.di.DownloadCache
 import com.arturo254.opentune.di.PlayerCache
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import com.arturo254.opentune.utils.YTPlayerUtils
 import com.arturo254.opentune.utils.StreamClientUtils
 import com.arturo254.opentune.utils.enumPreference
@@ -162,7 +163,13 @@ constructor(
                         id = mediaId,
                         title = playbackData.videoDetails?.title ?: "Unknown",
                         duration = playbackData.videoDetails?.lengthSeconds?.toIntOrNull() ?: 0,
-                        thumbnailUrl = playbackData.videoDetails?.thumbnail?.thumbnails?.lastOrNull()?.url,
+                        thumbnailUrl =
+                            playbackData.videoDetails
+                                ?.thumbnail
+                                ?.thumbnails
+                                ?.lastOrNull()
+                                ?.url
+                                .highQualityThumbnailUrlOrNull(),
                         dateDownload = now
                     )
                 }

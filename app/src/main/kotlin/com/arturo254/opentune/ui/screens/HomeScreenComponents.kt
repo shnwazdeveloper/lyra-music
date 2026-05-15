@@ -114,6 +114,7 @@ import com.arturo254.opentune.ui.menu.YouTubeAlbumMenu
 import com.arturo254.opentune.ui.menu.YouTubeArtistMenu
 import com.arturo254.opentune.ui.menu.YouTubePlaylistMenu
 import com.arturo254.opentune.ui.menu.YouTubeSongMenu
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import androidx.compose.foundation.gestures.snapping.SnapLayoutInfoProvider
 import com.arturo254.opentune.models.SimilarRecommendation
 import kotlin.math.ceil
@@ -183,7 +184,7 @@ fun QuickPicksSection(
         ) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(song.song.thumbnailUrl)
+                    .data(song.song.thumbnailUrl.highQualityThumbnailUrlOrNull())
                     .crossfade(true)
                     .build(),
                 contentDescription = null,
@@ -353,7 +354,7 @@ fun SpeedDialSection(
                         )
                 ) {
                     AsyncImage(
-                        model = song.song.thumbnailUrl,
+                        model = song.song.thumbnailUrl.highQualityThumbnailUrlOrNull(),
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxSize()

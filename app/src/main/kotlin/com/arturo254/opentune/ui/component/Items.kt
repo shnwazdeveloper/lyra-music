@@ -114,6 +114,7 @@ import com.arturo254.opentune.innertube.models.SongItem
 import com.arturo254.opentune.innertube.models.YTItem
 import com.arturo254.opentune.models.MediaMetadata
 import com.arturo254.opentune.playback.queues.LocalAlbumRadio
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import com.arturo254.opentune.utils.joinByBullet
 import com.arturo254.opentune.utils.makeTimeString
 import com.arturo254.opentune.utils.rememberPreference
@@ -1470,9 +1471,19 @@ fun ItemThumbnail(
 
         if (albumIndex == null) {
             if (shouldLoadImage) {
-                val request = remember(thumbnailUrl, widthPx, heightPx) {
+                val highQualityThumbnailUrl = remember(thumbnailUrl) {
+                    thumbnailUrl.highQualityThumbnailUrlOrNull()
+                }
+                var useOriginalThumbnail by remember(thumbnailUrl) { mutableStateOf(false) }
+                val imageUrl =
+                    if (useOriginalThumbnail) {
+                        thumbnailUrl
+                    } else {
+                        highQualityThumbnailUrl ?: thumbnailUrl
+                    }
+                val request = remember(imageUrl, widthPx, heightPx) {
                     ImageRequest.Builder(context)
-                        .data(thumbnailUrl)
+                        .data(imageUrl)
                         .allowHardware(true)
                         .apply {
                             if (widthPx != null && heightPx != null) {
@@ -1485,6 +1496,11 @@ fun ItemThumbnail(
                     model = request,
                     contentDescription = null,
                     contentScale = if (shouldApplySquareCrop) ContentScale.Crop else ContentScale.Fit,
+                    onError = {
+                        if (!useOriginalThumbnail && imageUrl != thumbnailUrl && !thumbnailUrl.isNullOrBlank()) {
+                            useOriginalThumbnail = true
+                        }
+                    },
                     modifier = Modifier
                         .fillMaxSize()
                         .let { if (shouldApplySquareCrop) it.aspectRatio(1f) else it }
@@ -1569,9 +1585,19 @@ fun LocalThumbnail(
         val shouldApplySquareCrop = cropThumbnailToSquare && isYouTubeThumb && kotlin.math.abs(thumbnailRatio - 1f) < 0.001f
         val widthPx = if (maxWidth == Dp.Infinity) null else with(density) { maxWidth.roundToPx().coerceAtLeast(1) }
         val heightPx = if (maxHeight == Dp.Infinity) null else with(density) { maxHeight.roundToPx().coerceAtLeast(1) }
-        val request = remember(thumbnailUrl, widthPx, heightPx) {
+        val highQualityThumbnailUrl = remember(thumbnailUrl) {
+            thumbnailUrl.highQualityThumbnailUrlOrNull()
+        }
+        var useOriginalThumbnail by remember(thumbnailUrl) { mutableStateOf(false) }
+        val imageUrl =
+            if (useOriginalThumbnail) {
+                thumbnailUrl
+            } else {
+                highQualityThumbnailUrl ?: thumbnailUrl
+            }
+        val request = remember(imageUrl, widthPx, heightPx) {
             ImageRequest.Builder(context)
-                .data(thumbnailUrl)
+                .data(imageUrl)
                 .allowHardware(true)
                 .apply {
                     if (widthPx != null && heightPx != null) {
@@ -1584,6 +1610,11 @@ fun LocalThumbnail(
             model = request,
             contentDescription = null,
             contentScale = if (shouldApplySquareCrop) ContentScale.Crop else ContentScale.Fit,
+            onError = {
+                if (!useOriginalThumbnail && imageUrl != thumbnailUrl && !thumbnailUrl.isNullOrBlank()) {
+                    useOriginalThumbnail = true
+                }
+            },
             modifier = Modifier.fillMaxSize().let { if (shouldApplySquareCrop) it.aspectRatio(1f) else it }
         )
 

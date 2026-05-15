@@ -110,6 +110,7 @@ import com.arturo254.opentune.ui.menu.PlayerMenu
 import com.arturo254.opentune.ui.theme.PlayerBackgroundColorUtils
 import com.arturo254.opentune.ui.component.PlayerSliderColors
 import com.arturo254.opentune.ui.utils.ShowMediaInfo
+import com.arturo254.opentune.ui.utils.highQualityThumbnailUrlOrNull
 import com.arturo254.opentune.utils.makeTimeString
 
 @Composable
@@ -1854,7 +1855,7 @@ fun PlayerBackground(
         when (playerBackground) {
             PlayerBackgroundStyle.BLUR -> {
                 AnimatedContent(
-                    targetState = mediaMetadata?.thumbnailUrl,
+                    targetState = mediaMetadata?.thumbnailUrl.highQualityThumbnailUrlOrNull(),
                     transitionSpec = {
                         fadeIn(tween(1000)) togetherWith fadeOut(tween(1000))
                     },
@@ -1955,7 +1956,7 @@ fun PlayerBackground(
 
             PlayerBackgroundStyle.BLUR_GRADIENT -> {
                 AnimatedContent(
-                    targetState = mediaMetadata?.thumbnailUrl,
+                    targetState = mediaMetadata?.thumbnailUrl.highQualityThumbnailUrlOrNull(),
                     transitionSpec = {
                         fadeIn(tween(1000)) togetherWith fadeOut(tween(1000))
                     },
