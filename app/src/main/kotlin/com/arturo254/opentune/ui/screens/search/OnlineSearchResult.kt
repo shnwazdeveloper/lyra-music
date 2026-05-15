@@ -106,6 +106,25 @@ fun OnlineSearchResult(
 
     val searchFilter by viewModel.filter.collectAsState()
     val searchSummary = viewModel.summaryPage
+    val allSongsPage by remember {
+        derivedStateOf {
+            viewModel.viewStateMap[FILTER_SONG.value]
+        }
+    }
+    val summaryItemIds = remember(searchSummary) {
+        searchSummary
+            ?.summaries
+            ?.flatMap { summary -> summary.items.map { it.id } }
+            ?.toSet()
+            .orEmpty()
+    }
+    val allTabSongs = remember(searchSummary, allSongsPage) {
+        allSongsPage
+            ?.items
+            .orEmpty()
+            .filterIsInstance<SongItem>()
+            .filterNot { it.id in summaryItemIds }
+    }
     val itemsPage by remember(searchFilter) {
         derivedStateOf {
             searchFilter?.value?.let {
@@ -257,7 +276,57 @@ fun OnlineSearchResult(
                 }
             }
 
-            if (searchSummary?.summaries?.isEmpty() == true) {
+            if (allTabSongs.isNotEmpty()) {
+                if (searchSummary?.summaries?.isNotEmpty() == true) {
+                    item(key = "all_songs_divider") {
+                        HorizontalDivider(
+                            modifier = Modifier.padding(horizontal = 20.dp, vertical = 4.dp),
+                            thickness = 0.5.dp,
+                            color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f)
+                        )
+                    }
+                }
+
+                item(key = "all_songs_header") {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .width(3.dp)
+                                .height(18.dp)
+                                .clip(RoundedCornerShape(2.dp))
+                                .background(MaterialTheme.colorScheme.primary)
+                        )
+                        Spacer(Modifier.width(10.dp))
+                        Text(
+                            text = stringResource(R.string.filter_songs),
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurface,
+                        )
+                    }
+                }
+
+                items(
+                    items = allTabSongs,
+                    key = { "all_songs_${it.id}" },
+                    itemContent = ytItemContent,
+                )
+            }
+
+            if (allSongsPage?.continuation != null) {
+                item(key = "loading") {
+                    ShimmerHost {
+                        repeat(3) {
+                            ListItemPlaceHolder()
+                        }
+                    }
+                }
+            }
+
+            if (searchSummary?.summaries?.isEmpty() == true && allSongsPage?.items?.isEmpty() == true) {
                 item {
                     EmptyPlaceholder(
                         icon = R.drawable.search,
@@ -292,7 +361,7 @@ fun OnlineSearchResult(
             }
         }
 
-        if (searchFilter == null && searchSummary == null || searchFilter != null && itemsPage == null) {
+        if (searchFilter == null && (searchSummary == null || allSongsPage == null) || searchFilter != null && itemsPage == null) {
             item {
                 ShimmerHost {
                     repeat(8) {

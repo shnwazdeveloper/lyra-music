@@ -14,7 +14,6 @@ import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -97,56 +96,10 @@ fun shimmerEffect(): Brush {
 
 // ── Data ───────────────────────────────────────────────────────────────────
 
-private data class Contributor(
-    val avatarUrl: String,
-    val name: String,
-    val role: String,
-    val profileUrl: String,
-)
-
 private data class SocialLink(
     val iconRes: Int,
     val url: String,
     val label: String,
-)
-
-private val contributors = listOf(
-    Contributor(
-        avatarUrl = "https://avatars.githubusercontent.com/u/87346871?v=4",
-        name = "亗 Arturo254",
-        role = "Lead Developer",
-        profileUrl = "https://github.com/Arturo254",
-    ),
-    Contributor(
-        avatarUrl = "https://avatars.githubusercontent.com/u/138934847?v=4",
-        name = "\uD81A\uDD10 Fabito02",
-        role = "Translator (PT_BR) · Icon designer",
-        profileUrl = "https://github.com/Fabito02/",
-    ),
-    Contributor(
-        avatarUrl = "https://avatars.githubusercontent.com/u/205341163?v=4",
-        name = "ϟ Xamax-code",
-        role = "Code Refactor",
-        profileUrl = "https://github.com/xamax-code",
-    ),
-    Contributor(
-        avatarUrl = "https://avatars.githubusercontent.com/u/106829560?v=4",
-        name = "ϟ Derpachi",
-        role = "Translator (RU_RU)",
-        profileUrl = "https://github.com/Derpachi",
-    ),
-    Contributor(
-        avatarUrl = "https://avatars.githubusercontent.com/u/147309938?v=4",
-        name = "「★」 RightSideUpCak3",
-        role = "Language selector",
-        profileUrl = "https://github.com/RightSideUpCak3",
-    ),
-    Contributor(
-        avatarUrl = "https://avatars.githubusercontent.com/gorupa?v=4",
-        name = "⟡ gorupa",
-        role = "Hindi Translator · Bug Fixes",
-        profileUrl = "https://github.com/gorupa",
-    ),
 )
 
 // ── Main screen ────────────────────────────────────────────────────────────
@@ -217,69 +170,6 @@ fun AboutScreen(
                 )
             }
 
-            // ── Contributors section header ───────────────────────────────
-            item {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 4.dp, vertical = 4.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(10.dp),
-                ) {
-                    Surface(
-                        shape = RoundedCornerShape(12.dp),
-                        color = MaterialTheme.colorScheme.secondaryContainer,
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .size(32.dp),
-                            contentAlignment = Alignment.Center,
-                        ) {
-                            Icon(
-                                painter = painterResource(R.drawable.person),
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onSecondaryContainer,
-                                modifier = Modifier.size(18.dp),
-                            )
-                        }
-                    }
-                    Text(
-                        text = stringResource(R.string.contributors),
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurface,
-                    )
-                }
-            }
-
-            // ── Contributors card ─────────────────────────────────────────
-            item {
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(24.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainer,
-                    ),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-                ) {
-                    Column {
-                        contributors.forEachIndexed { index, contributor ->
-                            ContributorRow(
-                                contributor = contributor,
-                                onClick = { uriHandler.openUri(contributor.profileUrl) },
-                            )
-                            if (index < contributors.lastIndex) {
-                                HorizontalDivider(
-                                    modifier = Modifier.padding(start = 72.dp, end = 16.dp),
-                                    color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f),
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-
-            // ── License footer ────────────────────────────────────────────
             item {
                 LicenseFooter(
                     onLicenseClick = {
@@ -394,7 +284,7 @@ private fun HeroCard(shimmerBrush: Brush) {
                 }
                 Column {
                     Text(
-                        text = "Dev by @sexyafraid",
+                        text = "Dev by shnwaz",
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -481,67 +371,6 @@ private fun SocialCard(
                 }
             }
         }
-    }
-}
-
-// ── Contributor row ────────────────────────────────────────────────────────
-
-@Composable
-private fun ContributorRow(
-    contributor: Contributor,
-    onClick: () -> Unit,
-) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onClick)
-            .padding(horizontal = 16.dp, vertical = 14.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(14.dp),
-    ) {
-        // Avatar
-        Surface(
-            shape = CircleShape,
-            color = MaterialTheme.colorScheme.secondaryContainer,
-            modifier = Modifier.size(44.dp),
-        ) {
-            AsyncImage(
-                model = contributor.avatarUrl,
-                contentDescription = null,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(44.dp)
-                    .clip(CircleShape),
-            )
-        }
-
-        // Name + role
-        Column(modifier = Modifier.weight(1f)) {
-            Text(
-                text = contributor.name,
-                style = MaterialTheme.typography.bodyLarge,
-                fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colorScheme.onSurface,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
-            Spacer(Modifier.height(2.dp))
-            Text(
-                text = contributor.role,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
-        }
-
-        // Forward arrow
-        Icon(
-            painter = painterResource(R.drawable.arrow_forward),
-            contentDescription = null,
-            tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f),
-            modifier = Modifier.size(18.dp),
-        )
     }
 }
 
