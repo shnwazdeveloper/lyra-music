@@ -209,12 +209,9 @@ fun AboutScreen(
             item {
                 SocialCard(
                     links = listOf(
-                        SocialLink(R.drawable.github,    "https://github.com/Arturo254/OpenTune",        "GitHub"),
-                        SocialLink(R.drawable.telegram,    "https://t.me/opentune_updates",               "Telegram"),
-                        SocialLink(R.drawable.facebook,  "https://www.facebook.com/Arturo254",            "Facebook"),
-                        SocialLink(R.drawable.paypal,    "https://www.paypal.me/OpenTune",                "PayPal"),
-                        SocialLink(R.drawable.instagram, "https://www.instagram.com/arturocg.dev/",       "Instagram"),
-                        SocialLink(R.drawable.resource_public, "https://opentune.netlify.app/",           "Web"),
+                        SocialLink(R.drawable.github, "https://github.com/shnwazdeveloper", "GitHub"),
+                        SocialLink(R.drawable.telegram, "https://t.me/sexyafraid", "Telegram"),
+                        SocialLink(R.drawable.instagram, "https://www.instagram.com/sexyafraid/", "Instagram"),
                     ),
                     onLinkClick = { uriHandler.openUri(it) },
                 )
@@ -286,7 +283,7 @@ fun AboutScreen(
             item {
                 LicenseFooter(
                     onLicenseClick = {
-                        uriHandler.openUri("https://github.com/Arturo254/OpenTune/blob/master/LICENSE")
+                        uriHandler.openUri("https://github.com/shnwazdeveloper/lyra-music/blob/master/LICENSE")
                     }
                 )
             }
@@ -387,7 +384,7 @@ private fun HeroCard(shimmerBrush: Brush) {
                     color = MaterialTheme.colorScheme.tertiaryContainer,
                 ) {
                     AsyncImage(
-                        model = "https://avatars.githubusercontent.com/u/87346871?v=4",
+                        model = "https://github.com/shnwazdeveloper.png",
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
@@ -397,7 +394,7 @@ private fun HeroCard(shimmerBrush: Brush) {
                 }
                 Column {
                     Text(
-                        text = "Dev by Arturo Cervantes 亗",
+                        text = "Dev by @sexyafraid",
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onSurface,

@@ -305,14 +305,6 @@ fun buildInternalItems(
             onClick = { resetSearch(); navController.navigate("settings/discord") },
         ),
         SettingsItem(
-            icon = painterResource(R.drawable.security),
-            title = stringResource(R.string.advanced_login),
-            subtitle = stringResource(R.string.discord),
-            accentColor = Color(0xFF5865F2),
-            keywords = listOf("token", "login", "authentication", "discord login"),
-            onClick = { resetSearch(); navController.navigate("settings/discord/login") },
-        ),
-        SettingsItem(
             icon = painterResource(R.drawable.experiment),
             title = stringResource(R.string.experimental_features),
             subtitle = stringResource(R.string.experimental_features_description),
